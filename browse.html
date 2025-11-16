@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Comics - ComicVerse Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Bangers', 'cursive'],
+            },
+            colors: {
+              'comic-blue': '#1e88e5',
+              'comic-red': '#e53935',
+              'comic-yellow': '#ffb300',
+              'comic-dark': '#121212',
+              'comic-light': '#212121',
+              'comic-gray': '#424242',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .carousel-item { transition: opacity 1s ease-in-out; }
+      .hero-text-shadow { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
+    </style>
+  </head>
+  <body class="bg-gray-100 dark:bg-comic-dark text-gray-900 dark:text-gray-200 transition-colors duration-300">
+    <header id="header-placeholder"></header>
+    
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 id="page-title" class="text-5xl font-display text-comic-yellow tracking-wider text-center mb-8">Browse All Comics</h1>
+            
+        <div class="bg-gray-100 dark:bg-comic-light p-4 rounded-lg mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 sticky top-[65px] z-40 shadow">
+            <div>
+                <label for="publisher-filter" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Publisher</label>
+                <select id="publisher-filter" class="bg-white dark:bg-comic-gray border border-gray-300 dark:border-comic-gray text-gray-900 dark:text-white text-sm rounded-lg focus:ring-comic-blue focus:border-comic-blue block w-full p-2.5"></select>
+            </div>
+            <div>
+                <label for="genre-filter" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Genre</label>
+                <select id="genre-filter" class="bg-white dark:bg-comic-gray border border-gray-300 dark:border-comic-gray text-gray-900 dark:text-white text-sm rounded-lg focus:ring-comic-blue focus:border-comic-blue block w-full p-2.5"></select>
+            </div>
+            <div>
+                <label for="sort-order" class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-300">Sort By</label>
+                <select id="sort-order" class="bg-white dark:bg-comic-gray border border-gray-300 dark:border-comic-gray text-gray-900 dark:text-white text-sm rounded-lg focus:ring-comic-blue focus:border-comic-blue block w-full p-2.5">
+                    <option value="releaseDate-desc">Newest First</option>
+                    <option value="releaseDate-asc">Oldest First</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="title-asc">Title: A-Z</option>
+                    <option value="title-desc">Title: Z-A</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="comics-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            <!-- Comics will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - ComicVerse Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Bangers', 'cursive'],
+            },
+            colors: {
+              'comic-blue': '#1e88e5',
+              'comic-red': '#e53935',
+              'comic-yellow': '#ffb300',
+              'comic-dark': '#121212',
+              'comic-light': '#212121',
+              'comic-gray': '#424242',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .carousel-item { transition: opacity 1s ease-in-out; }
+      .hero-text-shadow { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); }
+    </style>
+  </head>
+  <body class="bg-gray-100 dark:bg-comic-dark text-gray-900 dark:text-gray-200 transition-colors duration-300">
+    <header id="header-placeholder"></header>
+    
+    <main>
+        <div class="max-w-2xl mx-auto text-center py-20 px-4">
+            <h1 class="text-5xl font-display text-comic-yellow tracking-wider">Thank You!</h1>
+            <p class="text-xl text-gray-700 dark:text-gray-300 mt-4">
+                Your simulated order has been placed.
+            </p>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+                This is a demonstration project. No actual purchase was made and no payment was processed.
+            </p>
+            <a 
+                href="/" 
+                class="mt-8 inline-block bg-comic-blue text-white font-bold py-3 px-8 rounded-lg hover:bg-comic-yellow transition-colors duration-300"
+            >
+                Return to Homepage
+            </a>
+        </div>
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
